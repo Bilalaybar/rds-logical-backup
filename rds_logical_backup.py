@@ -161,12 +161,7 @@ def get_db_endpoint():
             database_endpoint = db_instances[i]['Endpoint']['Address']
             printer("Endpoint is  : " + db_instances[i]['Endpoint']['Address'])
             printer("Database name is : " +database_name)
-            if environment_name == "team-ist-06" and environment_name in database_endpoint:
-                break
-            if environment_name == "team-ist-07" and environment_name in database_endpoint:
-                break
-            if environment_name == "team-ist-08" and environment_name in database_endpoint:
-                break
+            break
     printer("Database dump operation will be on : "+database_endpoint)
 
 def get_account_id():
@@ -184,4 +179,3 @@ def check_connection_for_db():
         printer("It's OK!Lambda can reach db endpoint!")
     else:
         printer("Oppss..Lambda cannot reach to the database endpoint!")
-
